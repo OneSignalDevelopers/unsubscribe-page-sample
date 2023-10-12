@@ -22,6 +22,13 @@ This repository is a comprehensive guide for implementing custom email unsubscri
 
 Both examples are designed to be easily integrated into your existing projects and come with detailed explanations and code snippets to get you up and running quickly.
 
+## Usage
+
+1. Clone this repo, `git clone https://github.com/onesignaldevelopers/email-unsubscribe-page-sample)
+2. Navigate to the repo, `cd ~/path-of-repo`
+3. Start a simple server, `npx http-server .`
+4. Navigate to one of the two demoss. 
+
 ## Custom Unsubscribe Form Demo
 
 The [Unsubscribe Form demo](./unsubscribe-form.html) showcases implementing a custom email unsubscribe feature using OneSignal's API. The HTML and JavaScript code below demonstrates the essential components:
