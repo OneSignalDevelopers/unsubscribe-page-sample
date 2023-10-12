@@ -61,10 +61,6 @@ The JavaScript code performs the following tasks:
 2. **Form Configuration**: Dynamically sets the form's `action` and `method` attributes.
 
 ```javascript
-const unsubscribeURL = (href) => {
-  // ...implementation
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   const formEl = document.getElementById("onesignal_custom_unsubscribe_form");
   formEl.setAttribute("action", unsubscribeURL(window.location.href));
@@ -113,17 +109,25 @@ The JavaScript code performs several tasks:
 2. **Button Event Handling**: Adds a click event listener to the button to trigger the unsubscribe action.
 
 ```javascript
-const unsubscribeURL = (href) => {
-  // ...implementation
-}
-
-const onClick = (event) => {
-  // ...implementation
-}
+const onClick = (event) =>
+    fetch(unsubscribeURL(window.location.href), {
+      method: "POST",
+    })
+      .then((res) => {
+        switch (res.status) {
+          case 200:
+            return console.log("ACK Unsubscription Reqeuest")
+          case 400:
+            return console.wann("Handle client request error")
+          case 500:
+            return console.warn("Fatal server error")
+        }
+      })
+      .catch((error) => console.error("Fatal error occurred", error.message))
 
 document.addEventListener("DOMContentLoaded", () => {
-  const buttonEl = document.getElementById("onesignal_custom_unsubscribe_btn");
-  buttonEl.addEventListener("click", onClick);
+const buttonEl = document.getElementById("onesignal_custom_unsubscribe_btn");
+buttonEl.addEventListener("click", onClick);
 });
 ```
 
@@ -146,6 +150,26 @@ The URL structure is of the form
   - `app_id`: The ID of your OneSignal application.
   - `notification_id`: The ID of the specific notification.
   - `token`: A security token for the unsubscribe action.
+ 
+### JavaScript Logic
+
+The JavaScript code constructs the URL OneSignal needs to unsubscribe the user from email.
+
+```js
+const unsubscribeURL = (href) => {
+    try {
+      const unsubscribeURL = new URL(href)
+      const appID = unsubscribeURL.searchParams.get("app_id")
+      const notificationID =
+        unsubscribeURL.searchParams.get("notification_id")
+      const unsubscribeToken = unsubscribeURL.searchParams.get("token")
+      return `https://api.onesignal.com/apps/${appID}/notifications/${notificationID}/unsubscribe?token=${unsubscribeToken}`
+    } catch (error) {
+      console.error(`Failed to parse '${href}'`, error.message)
+      return null
+    }
+  }
+```
 
 ### How It Works
 
