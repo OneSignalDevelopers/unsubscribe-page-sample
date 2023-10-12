@@ -134,7 +134,7 @@ buttonEl.addEventListener("click", onClick);
 ### How It Works
 
 1. Upon page load, the `DOMContentLoaded` event is triggered.
-2. The JavaScript function `unsubscribeURL` constructs the OneSignal API endpoint for unsubscribing.
+2. The JavaScript function `unsubscribeURL` constructs the OneSignal API endpoint to unsubscribe the user from email.
 3. A click event listener is added to the button. When clicked, it makes a POST request to the API endpoint.
 
 By incorporating this code, you can create a custom unsubscribe feature directly interacting with OneSignal's API through a button click.
