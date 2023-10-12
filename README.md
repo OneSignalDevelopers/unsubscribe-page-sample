@@ -90,11 +90,63 @@ The JavaScript code performs several tasks:
 
 ```javascript
 const unsubscribeURL = (href) => {
-  // ... (existing code)
+  // ...implementation
 }
 
 const onClick = (event) => {
-  // ... (existing code)
+  // ## Custom Unsubscribe Button Demo
+
+This demo illustrates implementing a custom email unsubscribe feature using a button and OneSignal's API. Below are the key components:
+
+### HTML Structure
+
+The HTML layout consists of a single "Unsubscribe" button. Unlike the previous example that used a form, this example triggers the unsubscribe action directly via a button click.
+
+```html
+<body>
+  <div class="header">
+    <h1>Custom Unsubscribe Button</h1>
+  </div>
+  <div class="content">
+    <button
+      id="onesignal_custom_unsubscribe_btn"
+      type="button"
+      class="unsubscribe-button"
+    >
+      Unsubscribe
+    </button>
+  </div>
+</body>
+```
+
+### How It Works
+
+1. Upon page load, the `DOMContentLoaded` event is triggered.
+2. The JavaScript function `unsubscribeURL` constructs the OneSignal API endpoint for unsubscribing.
+3. A click event listener is added to the button. When clicked, it makes a POST request to the API endpoint.
+
+By incorporating this code, you can create a custom unsubscribe feature directly interacting with OneSignal's API through a button click.
+
+}
+
+const onClick = (event) => {
+  // ...implementation
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const buttonEl = document.getElementById("onesignal_custom_unsubscribe_btn");
+  buttonEl.addEventListener("click", onClick);
+});
+```
+
+### How It Works
+
+1. Upon page load, the `DOMContentLoaded` event is triggered.
+2. The JavaScript function `unsubscribeURL` constructs the OneSignal API endpoint for unsubscribing.
+3. A click event listener is added to the button. When clicked, it makes a POST request to the API endpoint.
+
+By incorporating this code, you can create a custom unsubscribe feature directly interacting with OneSignal's API through a button click.
+
 }
 
 document.addEventListener("DOMContentLoaded", () => {
