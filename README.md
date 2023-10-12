@@ -43,7 +43,7 @@ The HTML is a simple form with a single "Unsubscribe" button. The form's `action
 ```html
 <body>
   <h1>Custom Unsubscribe Form</h1>
-  <form id="onesignal_custom_unsubscribe_form">
+  <form>
     <button type="submit">Unsubscribe</button>
   </form>
 </body>
