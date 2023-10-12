@@ -34,9 +34,9 @@ Both examples are designed to be easily integrated into your existing projects a
 
 ## Custom Unsubscribe Form Demo
 
-<img width="1176" alt="unsubscribe-form" src="https://github.com/OneSignalDevelopers/email-unsubscribe-pages-sample/assets/1715082/20a4c902-0ab5-410c-b5b9-0ad32ba244b0">
-
 The [form demo](./unsubscribe-form.html) showcases implementing a custom email unsubscribe feature using OneSignal's API. The HTML and JavaScript code below demonstrates the essential components:
+
+<img width="1176" alt="unsubscribe-form" src="https://github.com/OneSignalDevelopers/email-unsubscribe-pages-sample/assets/1715082/20a4c902-0ab5-410c-b5b9-0ad32ba244b0">
 
 ### HTML Structure
 
@@ -76,9 +76,9 @@ Integrating this code into your project enables you to create a custom unsubscri
 
 ## Custom Unsubscribe Button Demo
 
-<img width="1176" alt="unsubscribe-button" src="https://github.com/OneSignalDevelopers/email-unsubscribe-pages-sample/assets/1715082/5589cbb9-17a1-44f4-b13c-38af83b92d05">
-
 The [button demo](./unsubscribe-button.html) illustrates implementing a custom email unsubscribe feature using a button and OneSignal's API. Below are the key components:
+
+<img width="1176" alt="unsubscribe-button" src="https://github.com/OneSignalDevelopers/email-unsubscribe-pages-sample/assets/1715082/5589cbb9-17a1-44f4-b13c-38af83b92d05">
 
 ### HTML Structure
 
