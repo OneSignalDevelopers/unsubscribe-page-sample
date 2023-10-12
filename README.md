@@ -42,14 +42,10 @@ The HTML is a simple form with a single "Unsubscribe" button. The form's `action
 
 ```html
 <body>
-  <div class="header">
-    <h1>Custom Unsubscribe Form</h1>
-  </div>
-  <div class="content">
-    <form id="onesignal_custom_unsubscribe_form">
-      <button type="submit">Unsubscribe</button>
-    </form>
-  </div>
+  <h1>Custom Unsubscribe Form</h1>
+  <form id="onesignal_custom_unsubscribe_form">
+    <button type="submit">Unsubscribe</button>
+  </form>
 </body>
 ```
 
@@ -86,18 +82,10 @@ The HTML layout consists of a single "Unsubscribe" button. Unlike the previous e
 
 ```html
 <body>
-  <div class="header">
-    <h1>Custom Unsubscribe Button</h1>
-  </div>
-  <div class="content">
-    <button
-      id="onesignal_custom_unsubscribe_btn"
-      type="button"
-      class="unsubscribe-button"
-    >
-      Unsubscribe
-    </button>
-  </div>
+  <h1>Custom Unsubscribe Button</h1>
+  <button type="button">
+    Unsubscribe
+  </button>
 </body>
 ```
 
@@ -123,7 +111,7 @@ const onClick = (event) =>
       .catch((error) => console.error("Fatal error occurred", error.message))
 
 document.addEventListener("DOMContentLoaded", () => {
-const buttonEl = document.getElementById("onesignal_custom_unsubscribe_btn");
+const buttonEl = document.getElementById("unsubscribe-btn");
 buttonEl.addEventListener("click", onClick);
 });
 ```
