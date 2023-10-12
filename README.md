@@ -27,7 +27,7 @@ Both examples are designed to be easily integrated into your existing projects a
 1. Clone this repo, `git clone https://github.com/OneSignalDevelopers/email-unsubscribe-pages-sample`
 2. Navigate to the repo, `cd ~/path-of-repo`
 3. Start a simple server, `npx http-server .`
-4. Navigate to one of the two demos
+4. Navigate to one of the two demos from one a OneSignal-generated email (see [this guide](#guide_explaining_how_to_build_email_template) to learn more)
 
 <img width="1176" alt="Screenshot 2023-10-12 at 11 26 56 AM" src="https://github.com/OneSignalDevelopers/email-unsubscribe-pages-sample/assets/1715082/f6c0e9e5-6364-46ad-8673-02e3aeceeb6a">
 
