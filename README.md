@@ -103,10 +103,7 @@ The HTML layout consists of a single "Unsubscribe" button. Unlike the previous e
 
 ### JavaScript Logic
 
-The JavaScript code performs several tasks:
-
-1. **URL Parsing**: Extracts `app_id`, `notification_id`, and `token` from the URL's query parameters.
-2. **Button Event Handling**: Adds a click event listener to the button to trigger the unsubscribe action.
+The JavaScript code adds a click event listener to the button to trigger the unsubscribe request.
 
 ```javascript
 const onClick = (event) =>
