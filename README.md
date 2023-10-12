@@ -157,5 +157,16 @@ The URL structure is of the form
    - The form's action attribute is set to this API endpoint in the form example.
    - In the button example, a click event listener is added to the button to make a POST request to this API endpoint.
 
+## ❤️ Developer Community
 
+For additional resources, please join the [OneSignal Developer Community](https://onesignal.com/onesignal-developers).
 
+Get in touch with us or learn more about OneSignal through the channels below.
+
+* [Follow us on Twitter](https://twitter.com/onesignaldevs) to never miss any updates from the OneSignal team, ecosystem & community
+* [Join us on Discord](https://discord.gg/EP7gf6Uz7G) to be a part of the OneSignal Developers community, showcase your work and connect with other OneSignal developers
+* [Read the OneSignal Blog](https://onesignal.com/blog/) for the latest announcements, tutorials, in-depth articles & more.
+* [Subscribe to us on YouTube](https://www.youtube.com/channel/UCe63d5EDQsSkOov-bIE_8Aw/featured) for walkthroughs, courses, talks, workshops & more.
+* [Follow us on Twitch](https://www.twitch.tv/onesignaldevelopers) for live streams, office hours, support & more.
+
+**Show your support** and give a ⭐️ if this project helped you :-)
