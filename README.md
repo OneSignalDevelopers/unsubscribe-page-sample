@@ -1,6 +1,6 @@
 # Custom Email Unsubscribe Pages
 
-This repository is a comprehensive guide for implementing custom email unsubscribe features using OneSignal's API. Aimed at developers, it provides two examples to demonstrate how you can provide your users a seamless and secure unsubscribe process. 
+This repository is a comprehensive guide for implementing custom email unsubscribe features using OneSignal's API. Aimed at developers, it provides two examples to demonstrate how you can provide users with a seamless and secure unsubscribe process. 
 
 1. **Custom Unsubscribe Form**: This example uses a simple HTML form with a single "Unsubscribe" button. The form's `action` and `method` attributes are dynamically set using JavaScript, which constructs the appropriate OneSignal API endpoint based on URL query parameters.
 
@@ -34,7 +34,7 @@ The HTML is a simple form with a single "Unsubscribe" button. The form's `action
 The JavaScript code performs the following tasks:
 
 1. **URL Parsing**: Extracts `app_id`, `notification_id`, and `token` from the URL's query parameters.
-2. **Form Configuration**: Dynamically sets the `action` and `method` attributes of the form.
+2. **Form Configuration**: Dynamically sets the form's `action` and `method` attributes.
 
 ```javascript
 const unsubscribeURL = (href) => {
@@ -94,59 +94,7 @@ const unsubscribeURL = (href) => {
 }
 
 const onClick = (event) => {
-  // ## Custom Unsubscribe Button Demo
-
-This demo illustrates implementing a custom email unsubscribe feature using a button and OneSignal's API. Below are the key components:
-
-### HTML Structure
-
-The HTML layout consists of a single "Unsubscribe" button. Unlike the previous example that used a form, this example triggers the unsubscribe action directly via a button click.
-
-```html
-<body>
-  <div class="header">
-    <h1>Custom Unsubscribe Button</h1>
-  </div>
-  <div class="content">
-    <button
-      id="onesignal_custom_unsubscribe_btn"
-      type="button"
-      class="unsubscribe-button"
-    >
-      Unsubscribe
-    </button>
-  </div>
-</body>
-```
-
-### How It Works
-
-1. Upon page load, the `DOMContentLoaded` event is triggered.
-2. The JavaScript function `unsubscribeURL` constructs the OneSignal API endpoint for unsubscribing.
-3. A click event listener is added to the button. When clicked, it makes a POST request to the API endpoint.
-
-By incorporating this code, you can create a custom unsubscribe feature directly interacting with OneSignal's API through a button click.
-
-}
-
-const onClick = (event) => {
   // ...implementation
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  const buttonEl = document.getElementById("onesignal_custom_unsubscribe_btn");
-  buttonEl.addEventListener("click", onClick);
-});
-```
-
-### How It Works
-
-1. Upon page load, the `DOMContentLoaded` event is triggered.
-2. The JavaScript function `unsubscribeURL` constructs the OneSignal API endpoint for unsubscribing.
-3. A click event listener is added to the button. When clicked, it makes a POST request to the API endpoint.
-
-By incorporating this code, you can create a custom unsubscribe feature directly interacting with OneSignal's API through a button click.
-
 }
 
 document.addEventListener("DOMContentLoaded", () => {
