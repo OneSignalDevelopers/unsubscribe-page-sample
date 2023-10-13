@@ -56,13 +56,14 @@ The HTML layout consists of a single "Unsubscribe" button. Unlike the previous e
 The JavaScript code adds a click event listener to the button to trigger the unsubscribe request.
 
 ```javascript
-const onClick = (event) =>
-  fetch(unsubscribeURL(window.location.href), {
+const onClick = (event) => {
+  const { unsubscribeURL } = unsubscribeURL(window.location.href)
+  fetch(unsubscribeURL, {
     method: "POST",
+  }).then((res) => {
+    // ... request handling
   })
-    .then((res) => {
-        // ...response handling
-    })
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   const buttonEl = document.getElementById("unsubscribe_button");
@@ -82,13 +83,15 @@ By incorporating this code, you can create a custom unsubscribe feature directly
 
 The URL structure is of the form
 
-`<Base URL>?app_id=<App ID>&notification_id=<Notification ID>&token=<JWT>`
+`<Base URL>?app_id=<App ID>&notification_id=<Notification ID>&email=<User Email>&language=<User Language>&token=<JWT>`
 
-- **Base URL**: `https://examplesite.com/unsubscription-form.html` - This is the location of your custom unsubscribe page.
+- **Base URL**: `https://examplesite.com/unsubscribe` - This is the location of your custom unsubscribe page.
 - **Query Parameters**:
   - `app_id`: The ID of your OneSignal application.
   - `notification_id`: The ID of the specific notification.
   - `token`: A security token for the unsubscribe action.
+  - `email`: The email address tied to the subscription
+  - `language`: The user's language preference
 
 ### JavaScript Logic
 
@@ -101,7 +104,12 @@ const unsubscribeURL = (href) => {
   const notificationID =
     unsubscribeURL.searchParams.get("notification_id")
   const unsubscribeToken = unsubscribeURL.searchParams.get("token")
-  return `https://api.onesignal.com/apps/${appID}/notifications/${notificationID}/unsubscribe?token=${unsubscribeToken}`
+  const language = url.searchParams.get("language")
+  const email = url.searchParams.get("email")
+  return {
+    unsubscribeURL: `https://api.onesignal.com/apps/${appID}/notifications/${notificationID}/unsubscribe?token=${unsubscribeToken}`,
+    meta: { language, email },
+  }
 }
 ```
 
@@ -110,7 +118,7 @@ const unsubscribeURL = (href) => {
 1. **Email Link**: The user receives an email containing the unsubscribe link.
 2. **Click Action**: When the user clicks the link, they are directed to your custom unsubscribe page, and the query parameters `app_id`, `notification_id`, `token` are passed along.
 3. **Page Load**: Upon loading, the `DOMContentLoaded` event triggers the JavaScript code.
-4. **URL Parsing**: The function `unsubscribeURL` extracts the query parameters to construct the OneSignal API endpoint for unsubscribing.
+4. **URL Parsing**: The function `unsubscribeURL` extracts the query parameters to construct the OneSignal API endpoint for unsubscribing and its supporting metadata.
 5. **Button Configuration**:
    - The form's action attribute is set to this API endpoint in the form example.
    - In the button example, a click event listener is added to the button to make a POST request to this API endpoint.
