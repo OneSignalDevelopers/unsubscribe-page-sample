@@ -38,8 +38,6 @@ The unsubscribe button will unsubscribe you when clicked.
 
 This [demo](./unsubscribe.html) demonstrates implementing OneSignal's **Custom Email Unsubscribe Page** feature using a button and OneSignal's API. Below are the key components:
 
-<img width="1176" alt="unsubscribe-button" src="https://github.com/OneSignalDevelopers/email-unsubscribe-pages-sample/assets/1715082/5589cbb9-17a1-44f4-b13c-38af83b92d05">
-
 ### HTML Structure
 
 The HTML layout consists of a single "Unsubscribe" button. Unlike the previous example that used a form, this example triggers the unsubscribe action directly via a button click.
