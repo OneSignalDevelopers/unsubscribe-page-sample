@@ -78,11 +78,14 @@
         .then((res) => {
           switch (res.status) {
             case 200:
-              return console.log("OneSignal ACK of unsubscription reqeuest")
+              alert("OneSignal ACK of unsubscription reqeuest")
+              break
             case 400:
-              return console.log("Client request error")
+              alert("Client request error")
+              break
             case 500:
-              return console.log("OneSignal can not process request")
+              alert("OneSignal can not process request")
+              break
           }
         })
         .catch((error) => console.error("Fatal error occurred", error.message))
