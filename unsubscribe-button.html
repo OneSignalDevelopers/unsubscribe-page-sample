@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Custom Unsubscribe Form</title>
+    <title>Unsubscribe Form</title>
     <style>
       body {
         font-family: "Arial", sans-serif;
@@ -29,9 +29,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: calc(
-          100vh - 60px
-        ); /* 100vh is full height, minus the approximate height of the h1 */
+        height: calc(100vh - 60px);
       }
       .unsubscribe-button {
         background-color: #ff4d4d;
@@ -49,14 +47,10 @@
   </head>
   <body>
     <div class="header">
-      <h1>Custom Unsubscribe Button</h1>
+      <h1>Unsubscribe Form</h1>
     </div>
     <div class="content">
-      <button
-        id="onesignal_custom_unsubscribe_btn"
-        type="button"
-        class="unsubscribe-button"
-      >
+      <button id="unsubscribe_button" type="button" class="unsubscribe-button">
         Unsubscribe
       </button>
     </div>
@@ -84,19 +78,17 @@
         .then((res) => {
           switch (res.status) {
             case 200:
-              return console.log("ACK Unsubscription Reqeuest")
+              return console.log("OneSignal ACK of unsubscription reqeuest")
             case 400:
-              return console.wann("Handle client request error")
+              return console.log("Client request error")
             case 500:
-              return console.warn("Fatal server error")
+              return console.log("OneSignal can not process request")
           }
         })
         .catch((error) => console.error("Fatal error occurred", error.message))
 
     document.addEventListener("DOMContentLoaded", () => {
-      const buttonEl = document.getElementById(
-        "onesignal_custom_unsubscribe_btn"
-      )
+      const buttonEl = document.getElementById("unsubscribe_button")
       buttonEl.addEventListener("click", onClick)
     })
   </script>

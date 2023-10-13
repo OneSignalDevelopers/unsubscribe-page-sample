@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Custom Unsubscribe Form</title>
+    <title>Unsubscribe Form</title>
     <style>
       body {
         font-family: "Arial", sans-serif;
@@ -29,11 +29,9 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: calc(
-          100vh - 60px
-        ); /* 100vh is full height, minus the approximate height of the h1 */
+        height: calc(100vh - 60px);
       }
-      #onesignal_custom_unsubscribe_form button {
+      #unsubscribe_form button {
         background: none;
         border: none;
         color: #ffffff;
@@ -42,12 +40,12 @@
         font-family: "Arial", sans-serif;
         font-size: 18px;
       }
-      #onesignal_custom_unsubscribe_form button:hover,
-      #onesignal_custom_unsubscribe_form button:focus {
+      #unsubscribe_form button:hover,
+      #unsubscribe_form button:focus {
         color: #ff4d4d;
         text-decoration: underline;
       }
-      #onesignal_custom_unsubscribe_form button:focus {
+      #unsubscribe_form button:focus {
         outline: none;
         border: 2px solid #f1f1f1;
         padding: 3px 6px;
@@ -56,10 +54,10 @@
   </head>
   <body>
     <div class="header">
-      <h1>Custom Unsubscribe Form</h1>
+      <h1>Unsubscribe Form</h1>
     </div>
     <div class="content">
-      <form id="onesignal_custom_unsubscribe_form">
+      <form id="unsubscribe_form">
         <button type="submit">Unsubscribe</button>
       </form>
     </div>
@@ -80,9 +78,7 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-      const formEl = document.getElementById(
-        "onesignal_custom_unsubscribe_form"
-      )
+      const formEl = document.getElementById("unsubscribe_form")
       formEl.setAttribute("action", unsubscribeURL(window.location.href))
       formEl.setAttribute("method", "post")
     })
