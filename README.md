@@ -28,14 +28,15 @@ Both examples are designed to be easily integrated into your existing projects a
 2. Navigate to the repo, `cd ~/path-of-repo`
 3. Start a simple server, `npx http-server .`
 4. Send email (see [this guide](#guide_explaining_how_to_build_email_template) to learn how setup email with custom unsubscribe link)
-5. Click unsubscribe link
+5. Click the unsubscribe link
 
+<img width="1136" alt="Screenshot 2023-10-13 at 5 30 57 PM" src="https://github.com/OneSignalDevelopers/email-unsubscribe-pages-sample/assets/1715082/fc889c8b-a605-40b3-b576-c679b0302422">
 
 The unsubscribe button will unsubscribe you when clicked.
 
 ## Custom Unsubscribe Demo
 
-The [button demo](./unsubscribe-button.html) illustrates implementing a custom email unsubscribe feature using a button and OneSignal's API. Below are the key components:
+This [demo](./unsubscribe.html) demonstrates implementing OneSignal's **Custom Email Unsubscribe Page** feature using a button and OneSignal's API. Below are the key components:
 
 <img width="1176" alt="unsubscribe-button" src="https://github.com/OneSignalDevelopers/email-unsubscribe-pages-sample/assets/1715082/5589cbb9-17a1-44f4-b13c-38af83b92d05">
 
@@ -93,7 +94,7 @@ The URL structure is of the form
 
 ### JavaScript Logic
 
-The JavaScript code constructs the URL OneSignal needs to unsubscribe the user from email.
+The JavaScript code constructs the URL OneSignal needs to unsubscribe the user from the email.
 
 ```js
 const unsubscribeURL = (href) => {
