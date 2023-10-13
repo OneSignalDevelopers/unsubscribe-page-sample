@@ -65,8 +65,8 @@
     <div class="container">
       <h1>Unsubscribe</h1>
       <p>
-        Unsubscribe <strong>ashlyn@onesignal.com</strong> from all marketing
-        email messages?
+        Unsubscribe <span id="user_email">ashlyn@onesignal.com</span> from all
+        marketing email messages?
       </p>
       <button id="unsubscribe_button" type="button" class="unsubscribe-button">
         Unsubscribe
@@ -77,20 +77,25 @@
   <script>
     const unsubscribeURL = (href) => {
       try {
-        const unsubscribeURL = new URL(href)
-        const appID = unsubscribeURL.searchParams.get("app_id")
-        const notificationID =
-          unsubscribeURL.searchParams.get("notification_id")
-        const unsubscribeToken = unsubscribeURL.searchParams.get("token")
-        return `https://api.onesignal.com/apps/${appID}/notifications/${notificationID}/unsubscribe?token=${unsubscribeToken}`
+        const url = new URL(href)
+        const appID = url.searchParams.get("app_id")
+        const notificationID = url.searchParams.get("notification_id")
+        const unsubscribeToken = url.searchParams.get("token")
+        const language = url.searchParams.get("language")
+        const email = url.searchParams.get("email")
+        return {
+          unsubscribeURL: `https://api.onesignal.com/apps/${appID}/notifications/${notificationID}/unsubscribe?token=${unsubscribeToken}`,
+          meta: { language, email },
+        }
       } catch (error) {
         console.error(`Failed to parse '${href}'`, error.message)
         return null
       }
     }
 
-    const onClick = (event) =>
-      fetch(unsubscribeURL(window.location.href), {
+    const onClick = (event) => {
+      const { unsubscribeURL } = unsubscribeURL(window.location.href)
+      fetch(unsubscribeURL, {
         method: "POST",
       })
         .then((res) => {
@@ -107,6 +112,7 @@
           }
         })
         .catch((error) => console.error("Fatal error occurred", error.message))
+    }
 
     document.addEventListener("DOMContentLoaded", () => {
       const buttonEl = document.getElementById("unsubscribe_button")
