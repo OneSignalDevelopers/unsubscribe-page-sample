@@ -24,7 +24,7 @@ Both examples are designed to be easily integrated into your existing projects a
 
 ## Usage
 
-1. Clone this repo, `git clone https://github.com/OneSignalDevelopers/email-unsubscribe-pages-sample`
+1. Clone this repo, `git clone https://github.com/OneSignalDevelopers/custom-email-unsubscribe-page-sample`
 2. Navigate to the repo, `cd ~/path-of-repo`
 3. Start a simple server, `npx http-server .`
 4. Send email (see [this guide](#guide_explaining_how_to_build_email_template) to learn how setup email with custom unsubscribe link)
