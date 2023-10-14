@@ -75,7 +75,7 @@
   </body>
 
   <script>
-    const unsubscribeURL = (href) => {
+    function createUnsubscribeURL(href) {
       try {
         const url = new URL(href)
         const appID = url.searchParams.get("app_id")
@@ -93,8 +93,7 @@
       }
     }
 
-    const onClick = (event) => {
-      const { unsubscribeURL } = unsubscribeURL(window.location.href)
+    const createClickHandler = (unsubscribeURL) => (event) => {
       fetch(unsubscribeURL, {
         method: "POST",
       })
@@ -113,10 +112,15 @@
         })
         .catch((error) => console.error("Fatal error occurred", error.message))
     }
-
     document.addEventListener("DOMContentLoaded", () => {
+      const { unsubscribeURL, meta } = createUnsubscribeURL(
+        window.location.href
+      )
       const buttonEl = document.getElementById("unsubscribe_button")
-      buttonEl.addEventListener("click", onClick)
+      buttonEl.addEventListener("click", createClickHandler(unsubscribeURL))
+
+      const emailEl = document.getElementById("email")
+      emailEl.innerText = `${meta.email}`
     })
   </script>
 </html>
