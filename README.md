@@ -30,7 +30,8 @@ Both examples are designed to be easily integrated into your existing projects a
 4. Send email (see [this guide](#guide_explaining_how_to_build_email_template) to learn how setup email with custom unsubscribe link)
 5. Click the unsubscribe link
 
-<img width="1136" alt="Screenshot 2023-10-13 at 5 30 57 PM" src="https://github.com/OneSignalDevelopers/email-unsubscribe-pages-sample/assets/1715082/fc889c8b-a605-40b3-b576-c679b0302422">
+<img width="1014" alt="Unsubscribe button" src="https://github.com/OneSignalDevelopers/custom-email-unsubscribe-page-sample/assets/1715082/bdc12473-254d-48c3-bcc9-26a112ff66b1">
+
 
 The unsubscribe button will unsubscribe you when clicked.
 
