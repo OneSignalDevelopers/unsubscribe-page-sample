@@ -73,7 +73,6 @@
       </button>
     </div>
   </body>
-
   <script>
     function createUnsubscribeURL(href) {
       try {
@@ -89,7 +88,6 @@
         }
       } catch (error) {
         console.error(`Failed to parse '${href}'`, error.message)
-        return null
       }
     }
 
@@ -120,7 +118,7 @@
       buttonEl.addEventListener("click", createClickHandler(unsubscribeURL))
 
       const emailEl = document.getElementById("email")
-      emailEl.innerText = `${meta.email}`
+      emailEl.innerText = `${meta.email || ""}`
     })
   </script>
 </html>
