@@ -14,13 +14,7 @@
 
 # Custom Email Unsubscribe Pages Sample
 
-This repository is a comprehensive guide for implementing custom email unsubscribe features using OneSignal's API. Aimed at developers, it provides two examples to demonstrate how you can provide users with a seamless and secure unsubscribe process.
-
-1. **Custom Unsubscribe Form**: This example uses a simple HTML form with a single "Unsubscribe" button. The form's `action` and `method` attributes are dynamically set using JavaScript, which constructs the appropriate OneSignal API endpoint based on URL query parameters.
-
-2. **Custom Unsubscribe Button**: Unlike the form-based approach, this example triggers the unsubscribe action directly via a button click. JavaScript adds a click event listener to the button, making a POST request to the OneSignal API endpoint for unsubscribing.
-
-Both examples are designed to be easily integrated into your existing projects and come with detailed explanations and code snippets to get you up and running quickly.
+This repository is a comprehensive guide for implementing custom email unsubscribe features using OneSignal's API. Aimed at developers, it demonstrates how you can provide users with a seamless and secure unsubscribe process. The example is designed to be easily integrated into your existing projects and comes with detailed explanations and code snippets to get you up and running quickly.
 
 ## Usage
 
