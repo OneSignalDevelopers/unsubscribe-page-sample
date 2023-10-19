@@ -31,7 +31,7 @@ The unsubscribe button will unsubscribe you when clicked.
 
 ## Custom Unsubscribe Demo
 
-This [demo](./unsubscribe.html) demonstrates implementing OneSignal's **Custom Email Unsubscribe Page** feature using a button and OneSignal's API. Below are the key components:
+This [demo](./index.html) demonstrates implementing OneSignal's **Custom Email Unsubscribe Page** feature using a button and OneSignal's API. Below are the key components:
 
 ### HTML Structure
 
