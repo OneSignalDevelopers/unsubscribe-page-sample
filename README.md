@@ -76,7 +76,7 @@ By incorporating this code, you can create a custom unsubscribe feature directly
 
 ## URL Structure
 
-The URL structure is of the form
+The URL structure for the API endpoint is of the form
 
 `<Base URL>?app_id=<App ID>&notification_id=<Notification ID>&email=<User Email>&language=<User Language>&token=<JWT>`
 
