@@ -14,13 +14,7 @@
 
 # Custom Email Unsubscribe Pages Sample
 
-This repository is a comprehensive guide for implementing custom email unsubscribe features using OneSignal's API. Aimed at developers, it provides two examples to demonstrate how you can provide users with a seamless and secure unsubscribe process.
-
-1. **Custom Unsubscribe Form**: This example uses a simple HTML form with a single "Unsubscribe" button. The form's `action` and `method` attributes are dynamically set using JavaScript, which constructs the appropriate OneSignal API endpoint based on URL query parameters.
-
-2. **Custom Unsubscribe Button**: Unlike the form-based approach, this example triggers the unsubscribe action directly via a button click. JavaScript adds a click event listener to the button, making a POST request to the OneSignal API endpoint for unsubscribing.
-
-Both examples are designed to be easily integrated into your existing projects and come with detailed explanations and code snippets to get you up and running quickly.
+This repository is a comprehensive guide for implementing custom email unsubscribe features using OneSignal's API. Aimed at developers, it demonstrates how you can provide users with a seamless and secure unsubscribe process. The example is designed to be easily integrated into your existing projects and comes with detailed explanations and code snippets to get you up and running quickly.
 
 ## Usage
 
@@ -82,7 +76,7 @@ By incorporating this code, you can create a custom unsubscribe feature directly
 
 ## URL Structure
 
-The URL structure is of the form
+The URL structure for the API endpoint is of the form
 
 `<Base URL>?app_id=<App ID>&notification_id=<Notification ID>&email=<User Email>&language=<User Language>&token=<JWT>`
 
@@ -117,18 +111,16 @@ const unsubscribeURL = (href) => {
 ### How It Works
 
 1. **Email Link**: The user receives an email containing the unsubscribe link.
-2. **Click Action**: When the user clicks the link, they are directed to your custom unsubscribe page, and the query parameters `app_id`, `notification_id`, `token` are passed along.
+2. **Click Action**: When the user clicks the link, they are directed to your custom unsubscribe page, and the query parameters `app_id`, `notification_id`, and `token` are passed along.
 3. **Page Load**: Upon loading, the `DOMContentLoaded` event triggers the JavaScript code.
 4. **URL Parsing**: The function `unsubscribeURL` extracts the query parameters to construct the OneSignal API endpoint for unsubscribing and its supporting metadata.
-5. **Button Configuration**:
-   - The form's action attribute is set to this API endpoint in the form example.
-   - In the button example, a click event listener is added to the button to make a POST request to this API endpoint.
+5. **Button Configuration**: A click event listener is added to the button to make a POST request to this API endpoint.
 
 ## ❤️ Developer Community
 
 For additional resources, please join the [OneSignal Developer Community](https://onesignal.com/onesignal-developers).
 
-Get in touch with us or learn more about OneSignal through the channels below.
+Please reach out to us or learn more about OneSignal through the channels below.
 
 * [Follow us on Twitter](https://twitter.com/onesignaldevs) to never miss any updates from the OneSignal team, ecosystem & community
 * [Join us on Discord](https://discord.gg/EP7gf6Uz7G) to be a part of the OneSignal Developers community, showcase your work and connect with other OneSignal developers
