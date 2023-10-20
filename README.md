@@ -21,7 +21,7 @@ This repository is a comprehensive guide for implementing custom email unsubscri
 1. Clone this repo, `git clone https://github.com/OneSignalDevelopers/custom-email-unsubscribe-page-sample`
 2. Navigate to the repo, `cd ~/path-of-repo`
 3. Start a simple server, `npx http-server .`
-4. Send email (see [this guide](#guide_explaining_how_to_build_email_template) to learn how setup email with custom unsubscribe link)
+4. Send email (see [this guide](https://documentation.onesignal.com/docs/building-your-own-custom-unsubscribe-page) to learn how setup email with custom unsubscribe link)
 5. Click the unsubscribe link
 
 <img width="1014" alt="Unsubscribe button" src="https://github.com/OneSignalDevelopers/custom-email-unsubscribe-page-sample/assets/1715082/bdc12473-254d-48c3-bcc9-26a112ff66b1">
